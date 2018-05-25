@@ -56,7 +56,7 @@ Import as *Existing Maven Project* and run it as *Spring Boot App*.
 
 ### Usage
 
-- Run the application and go on http://localhost:8080/
+- Run the application and go on http://localhost:8080/ or https://localhost:8090/
 - with the database:
     * `create database with name 'db_scolarite_mvc'.
     
