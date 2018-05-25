@@ -186,7 +186,6 @@ public class EtudiantController {
 			RedirectAttributes redirectAttributes) throws IllegalStateException, IOException
 	{
 		if ((file.isEmpty())||(bindingResult.hasErrors())) {
-			System.out.println("11111111111111111111111");
             return "/editerFormEtudiant";
         }
 		else {
@@ -196,7 +195,6 @@ public class EtudiantController {
 			// save image
 			file.transferTo(new File(imagePath + etudiant.getId() + file.getOriginalFilename()));
 		}
-		System.out.println("2222222222222222222222222222");
 		return "redirect:/user/Index";
 	}
 	
