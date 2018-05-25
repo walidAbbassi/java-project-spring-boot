@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+	
+	<title>Spring Security Tutorial</title>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    		<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" href="#">Spring Boot</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a th:href="@{/registration}" th:inline="text"><span class="glyphicon glyphicon-plus-sign"></span> Registration</a></li>
+					</ul>
+				</div>
+			</div>
+	</nav>	
+	
+	<div class="container">
+		<div class="col-md-6 col-sm-6 col-xs-12 spacer col-md-offset-3 spacer_initial_form">
+		</br></br></br></br>
+			<form th:action="@{/login}" method="POST" class="form-signin">
+				<h3 class="form-signin-heading" th:text="Welcome"></h3>
+				<br/>
+				<input type="text" id="username" name="username"  th:placeholder="Username"
+					class="form-control" /> <br/> 
+				<input type="password"  th:placeholder="Password"
+					id="password" name="password" class="form-control" /> <br /> 
+					
+				<div align="center" th:if="${param.error}">
+					<p style="font-size: 20; color: #FF1C19;">Username or Password invalid, please verify</p>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" th:text="Login"></button>
+				<br/>
+				<tr>
+					<td><input type="checkbox" name="remember-me"></td>
+					<td>Remember me on this Computer</td>
+				</tr>
+			</form>
+		</div>
+	</div>
+	
+	<footer class="navbar navbar-inverse navbar-fixed-bottom"
+		th:fragment="footer">
+		<div class="container-fluid">
+			<div class="container">
+				<small> 
+				<a class="navbar-brand">Copyright &#xa9 2018</a> <!-- © ==>&#xa9 -->
+				</small>
+			</div>
+		</div>
+	</footer>
+	
+</body>
+</html>

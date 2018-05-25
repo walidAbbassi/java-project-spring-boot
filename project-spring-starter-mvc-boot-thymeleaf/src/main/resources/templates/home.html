@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" th:href="@{/css/style.css}"
+		href="../static/css/style.css" />
+		
+	<title>Spring Boot Thymeleaf Home Example</title>
+
+</head>
+
+<body>
+	<div class="container">
+		
+		<div layout:fragment="content">
+			<!-- *************************** Metier *************************** -->
+			<div class="container-fluid text-center spacer_initial">
+				<div class="col-sm-8 text-left"> 
+					<h1>Spring Boot Web Thymeleaf Example</h1>
+					<h2>
+						<span th:text="'Message: ' + ${message}"></span>
+					</h2>
+				</div>
+			<!-- *************************** Metier *************************** -->
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

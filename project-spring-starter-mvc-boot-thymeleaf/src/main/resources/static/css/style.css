@@ -1,0 +1,88 @@
+h1{
+	color:#0000FF;
+}
+
+h2{
+	color:#FF0000;
+}
+
+.spacer{
+	margin-top:10px;
+	/* border: 3px solid green; */
+}
+
+.spacer_initial{
+	margin-top:20px;
+	/* border: 3px solid green; */
+}
+
+.spacer_initial_form{
+	margin-top:50px;
+	/* border: 3px solid green; */
+}
+
+.spacer_left{
+	margin-left:5%;
+	/* border: 3px solid green; */
+}
+
+.spacer_right{
+	margin-right:5%;
+	/* border: 3px solid green; */
+}
+
+.spacer_center{
+    margin: auto;
+    width: 50%;
+	/* border: 3px solid green; */
+    padding: 10px;
+}
+.center{
+	col-md-6 col-sm-6;
+	col-xs-12;
+	col-md-offset-3;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+/* footer {
+    position: fixed;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    background-color: #555;
+  	color: white;
+  	padding: 15px;
+} */
+
+/* .footer {
+  background-color: #eee;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+} */
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
+}

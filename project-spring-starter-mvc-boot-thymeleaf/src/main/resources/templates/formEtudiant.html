@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" th:href="@{/css/style.css}"
+		href="../static/css/style.css" />
+		
+	<title>Registration Student</title>
+
+</head>
+
+<body>
+
+	<div layout:fragment="content">
+		<!-- *************************** Metier *************************** -->
+		<div class="col-md-6 col-sm-6 col-xs-12 spacer col-md-offset-3 spacer_initial_form">
+			<div class="panel panel-default">
+				<div class="panel-heading">Registration Student</div>
+				<div class="panel-body">
+					<form method="POST" th:action="@{/admin/save}" enctype="multipart/form-data" th:object="${etudiant}">
+						<div class="form-group">
+							<label class="control-label">Name</label>
+							<input type="text" name="nom" th:field="*{nom}" placeholder="Enter Name" class="form-control"/>
+							<span th:errors="*{nom}" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Birth Date</label>
+							<input type="date" name="dateNaissance" th:field="*{dateNaissance}" class="form-control"/>
+							<span th:errors="*{dateNaissance}" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Email</label>
+							<input type="text" name="email" th:field="*{email}" placeholder="Enter Email" class="form-control">
+							<span th:errors="*{email}" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Photo</label>
+							<input type="file" name="file" class="form-control"/>
+							<span th:errors="*{photo}" class="text-danger"></span>
+						</div>
+						<button type="submit" class="btn btn-primary" style="float: right;">Save</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- *************************** Metier *************************** -->
+	</div>
+
+</body>
+	
+</html>

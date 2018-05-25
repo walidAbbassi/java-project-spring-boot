@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<title>Header</title>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse" th:fragment="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="#">Spring Boot</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/">Home</a></li>
+					<li><a th:href="@{/user/Index}">List Of Students</a></li>
+					<li><a th:href="@{/admin/form}">Registration Student</a></li>
+					<li><a th:href="@{/admin/registrationAdmin}">Registration Administrator</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#about">About</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a th:inline="text"><span class="glyphicon glyphicon-user"></span> [[${#httpServletRequest.remoteUser}]]</a>
+					</li>
+					<!-- <li><a th:href="@{/login?logout}" th:inline="text"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> -->
+					<li><a th:href="@{/logout}" th:inline="text"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+</body>
+
+</html>

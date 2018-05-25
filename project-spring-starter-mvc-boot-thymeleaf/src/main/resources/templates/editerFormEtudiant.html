@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" th:href="@{/css/style.css}"
+		href="../static/css/style.css" />
+		
+	<title>Saisie des etudiants</title>
+
+</head>
+
+<body>
+
+	<div layout:fragment="content">
+		<!-- *************************** Metier *************************** -->
+		<div class="col-md-6 col-sm-6 col-xs-12 spacer col-md-offset-3 spacer_initial_form">
+			<div class="panel panel-default">
+				<div class="panel-heading">Saisie d'un Etudiant</div>
+				<div class="panel-body">
+					<form method="POST" th:action="@{/admin/update}" enctype="multipart/form-data" th:object="${etudiant}">
+						<div class="form-group">
+							<label class="control-label">ID</label>
+							<input type="text" name="id" readonly th:field="*{id}" class="form-control"/>
+							<span th:errors="*{id}" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Nom</label>
+							<input type="text" name="nom" th:field="*{nom}" class="form-control"/>
+							<span th:errors="*{nom}" class="text-danger"></span>
+						</div>						
+						<div class="form-group">
+							<label class="control-label">date de naissance</label>
+							<input type="date" name="dateNaissance" th:field="*{dateNaissance}" class="form-control"/>
+							<span th:errors="*{dateNaissance}" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Email</label>
+							<input type="text" name="email" th:field="*{email}" class="form-control">
+							<span th:errors="*{email}" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Photo</label>
+							<input type="file" name="file" class="form-control"/>
+							<span th:errors="*{photo}" class="text-danger"></span>
+							<img  class="img-circle" th:src="@{/getPhoto(id=${etudiant.id}, filename=${etudiant.photo})}" with="100" height="100" align="left"/>
+						</div>
+						<br><br><br><br>
+						<button type="submit" class="btn btn-primary" style="float: right;">Save</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- *************************** Metier *************************** -->
+	</div>
+
+</body>
+	
+</html>
